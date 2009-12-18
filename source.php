@@ -29,16 +29,11 @@
 ?>
 	<b>The Source</b><br>
 	<br>
+<p>This program was released under the GPL and thus the sourcecode is here and available for you to download!</p>
+<p>You can obtain the newest and most updated version from github from the <a href="http://www.club-ubuntu.com">Club-Ubuntu</a> sponsored version (Paradox Edition) here:</p>
+<blockquote><a href="http://github.com/teamcoltra/Choose-Your-Own-Adventure">http://github.com/teamcoltra/Choose-Your-Own-Adventure</a></blockquote>
+<p>You may also view the older (mildly kept-up) SVN Repo:</p>
+<blockquote><a href="https://svn.iamcal.com/public/www/choose/">https://svn.iamcal.com/public/www/choose/</a></blockquote>
+<br />
 
-	So you all want to know how this masterpiece was constructed, right? Right? Well, here's the source for your enjoyment.<br>
-	<br>
-
-	The program requires PHP 4 and mysql, though it could easily be adapted to use other databases (or even other languages if you were feeling adventurous).<br>
-	<br>
-	SVN Repo: <a href="https://svn.iamcal.com/public/www/choose/">https://svn.iamcal.com/public/www/choose/</a><br />
-	<br />
-	<br />
-	It refers to an external database library. I haven't yet published that, so you're somewhat on your own there.
-<br /> 
-Currently we are running a modified version which is released under the GPL... and we will get the source up and stuff... soon.
 <?phpphp include('footer.txt'); ?>
