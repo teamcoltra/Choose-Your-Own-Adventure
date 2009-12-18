@@ -1,0 +1,46 @@
+TABLE OF CONTENTS:
+-BORING STUFF
+-ABOUT THIS PROGRAM
+-CHANGELOG
+
+------------------------
+#FIRST THE BORING STUFF:
+------------------------
+
+  	This code was made possible by the following people:
+  -Cal Henderson (http://www.iamcal.com)
+  -Travis "TeamColtra" McCrea (http://www.travismccrea.com)
+  -Club Ubuntu Team (http://www.club-ubuntu.org) #Club-Ubuntu Freenode
+  
+  While part of the terms we do not REQUIRE you to keep attribution
+  we wouldn't mind it. :) 
+  
+  Speaking of Licences:
+    This file is part of Choose Your Own Adventure (Paradox Edition)
+ 
+   Choose is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+ 
+    Choose is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+ 
+   You should have received a copy of the GNU General Public License
+   inside the file "LICENCE".
+
+-------------------
+#About This Program
+-------------------
+
+This program is a fun little "game" that allows a community to develop a "choose your own adventure" game. Its very simple, and probably could be recreated easily. However, we hope that our version fits your bill just fine.
+
+-------------------
+#Changelog
+-------------------
+
+2009-12-18 12:30AM
+--"Paradox Edition" of the Choose Your Own Adventure script forked from IAMCAL.COM and released under GPL with permission. Current changes are limited to including an installer script, and the origional script which is the only one that is working. 
+
