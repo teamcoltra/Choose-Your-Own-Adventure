@@ -1,0 +1,27 @@
+	<br>
+	&nbsp;<br>
+</div>
+
+<div class="content" align="center">
+	&copy; 2001-2009 <a href="http://www.iamcal.com/">Cal Henderson</a>
+</div>
+
+<div id="leftcol">
+	<h2>Navigation</h2>
+	<p style="margin: 0;">
+		<br>
+		&raquo;<a href="http://club-ubuntu.org/">Back to Club Ubuntu</a><br />
+		<br />
+		&raquo;<a href="room.php">play the game</a><br />
+		<br />
+		&raquo;<a href="source.php">source code</a><br>
+		<br />
+		<br />
+		<?php=$insert?>
+	</p>
+</div>
+
+
+
+</body>
+</html>
