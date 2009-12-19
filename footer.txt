@@ -17,7 +17,7 @@
 		&raquo;<a href="source.php">source code</a><br>
 		<br />
 		<br />
-		<?php=$insert?>
+
 	</p>
 </div>
 
