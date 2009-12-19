@@ -55,8 +55,7 @@
  <input type="submit" name="Submit" value="Submit">
 </form>
 </body></html>
-<?phpphp
-
+<?php
 if ($_POST['Submit']) {
 
 extract($_POST);
