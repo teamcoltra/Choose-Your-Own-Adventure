@@ -83,7 +83,9 @@ $sql = "CREATE TABLE choose_rooms (
 ) TYPE=MyISAM";
 
 // Insert into Table
-mysql_query("INSERT INTO choose_rooms VALUES (1, '$email', 'First Room', 'Choice 1', 0, 'Choice 2', 0, 0, '')",$con);
+$table = "INSERT INTO choose_rooms VALUES (1, '$email', 'First Room', 'Choice 1', 0, 'Choice 2', 0, 0, '')";
+
+mysql_query($table,$con);
 
 // Execute query
 mysql_query($sql,$con);
