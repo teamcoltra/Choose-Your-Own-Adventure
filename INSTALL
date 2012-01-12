@@ -1,0 +1,18 @@
+A quick and dirty install guide:
+
+1.) Unpack the files and make sure they're readable by your web server. (apache, www-data, etc.)
+
+2.) Create an MySQL database and user.
+   CREATE DATABASE ________;
+   GRANT ALL ON _______.* TO 'username'@'localhost' IDENTIFIED BY 'supercoolpassword';
+   FLUSH PRIVILEGES;
+
+3.) Navigate to the install page.  e.g. http://www.example.com/adventure/install.php
+
+4.) Enter your details the DB info from above and submit.
+
+5.) Create an .htaccess and .htpasswd file to protect your edit and admin pages.
+
+6.) Go to the admin page and cusomize your site.
+
+Best of luck!

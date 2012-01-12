@@ -1,35 +1,9 @@
 <?php
-/* #####################################################################
- * 
- * 	This code was made possible by the following people:
- * -Cal Henderson (http://www.iamcal.com)
- * -Travis "TeamColtra" McCrea (http://www.travismccrea.com)
- * -Club Ubuntu Team (http://www.club-ubuntu.org) #Club-Ubuntu Freenode
- * 
- * While part of the terms we do not REQUIRE you to keep attribution
- * we wouldn't mind it. :) 
- * 
- * Speaking of Licences:
- *   This file is part of Choose Your Own Adventure (Paradox Edition)
- *
- *  Choose is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *   Choose is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  inside the file "LICENCE".
- * ###################################################################*/
 	include('header.txt');
 ?>
-<html><head><title>Installer Script 0.0.01 BETA</title></head>
+<html><head><title>Installer Script</title></head>
 <body>
-<p>Please make sure that config.php is set to 666 (or 777) permissions as so this file can read and write to it. :) Thank you!</p>
+<p>Please make sure that config.php is set to 666 (or 777) permissions as so this file can read and write to it.</p>
 <form action="" method="post" name="write" id="write">
  Name
  <input name="name" type="text" id="name">
@@ -85,16 +59,52 @@ $sql = "CREATE TABLE choose_rooms (
 // Insert into Table
 $table = "INSERT INTO choose_rooms VALUES (1, '$email', 'First Room', 'Choice 1', 0, 'Choice 2', 0, 0, '')";
 
-mysql_query($table,$con);
-
 // Execute query
 mysql_query($sql,$con);
+mysql_query($table,$con);
+
+//Set up the settings table
+
+$settings_table = "CREATE TABLE `choose_settings` (
+  `id` int(11) NOT NULL auto_increment,
+  `title` varchar(128) default NULL,
+  `root_url` varchar(128) default NULL,
+  `copyright_text` varchar(64) default NULL,
+  `copyright_year` int(11) default NULL,
+  `copyright_url` varchar(128) default NULL,
+  `main_page_text` text,
+  `warn_box_blurb` text,
+  `new_room_blurb` text,
+  `kill_depth` int(11) default NULL,
+  `privacy_policy` text,
+  `enable_adsense` binary(1) default NULL,
+  `adsense_blurb` text,
+  `enable_recaptcha` binary(1) default NULL,
+  `recaptcha_public_key` varchar(64) default NULL,
+  `recaptcha_private_key` varchar(64) default NULL,
+  `enable_analytics` binary(1) default NULL,
+  `analytics_blurb` text,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM";
+
+$settings_sql = "INSERT INTO `choose_settings` VALUES (
+1,'An Epic Adventure!','','Your Name',2012,
+'https://github.com/jeffgeiger/Choose',
+'You have stumbled upon my very own \"Choose your own adventure\" tale.\r\n\r\nIt\'s a work in progress, partly because I don\'t have the time to write a whole story from soup to nuts, but mostly because you have the option of expanding it!\r\n',
+'This game is not suitable for children. Some story choices contain language and situations that some adults may find offensive. This story is written by visitors to the site, and is largely unmoderated. Please do not use this in the classroom. ',
+'Now it\'s time for you to create your own adventure.',
+5,'We only want your email address to distinguish your work from others in the back end of the website.  We won\'t sell it, give it away, spam you, or anything else.  Promise.','1',
+'<script type=\"text/javascript\"><!--\r\ngoogle_ad_client = \"ca-pub-9002758983777648\";\r\n/* ZombieScraper */\r\ngoogle_ad_slot = \"8575986931\";\r\ngoogle_ad_width = 160;\r\ngoogle_ad_height = 600;\r\n//-->\r\n</script>\r\n<script type=\"text/javascript\"\r\nsrc=\"http://pagead2.googlesyndication.com/pagead/show_ads.js\">\r\n</script>','0','','','0','');";
+
+mysql_query($settings_table,$con);
+mysql_query($settings_sql,$con);
+
 
 mysql_close($con);
 
 $file_to_write = 'config.php';
 
-$content .="<?phpphp\n";
+$content .="<?php\n";
 $content .="\$config['name'] = '$name';\n";
 $content .="\$config['password'] = '$password';\n";
 $content .="\$config['email'] = '$email';\n";
@@ -102,20 +112,54 @@ $content .="\$config['db_user'] = '$db_user';\n";
 $content .="\$config['db_pass'] = '$db_pass';\n";
 $content .="\$config['db_data'] = '$db_data';\n";
 $content .="\$config['db_host'] = '$db_host';\n";
-$content .="\$con = mysql_connect('$db_host','$db_user','$db_pass');\n";
-$content .="if (!\$con)\n";
-$content .="{\n";
-$content .="die('Could not connect: ' . mysql_error());\n";
-$content .="}\n";
-$content .="mysql_select_db(\$config['db_data'], $con);\n";
 $content .="?>";
 
 $fp = fopen($file_to_write, 'w');
 fwrite($fp, $content);
 fclose($fp);
-echo "Successn";
+echo "Success\n";
 echo "$file_to_writen";
 echo "Has been written";
 }
+?>
+<br />
+<h1>Next Steps:</h1>
+Create an .htaccess file in your directory to protect your admin and edit pages.  Example:
+<div class="boxy">
+	<pre>
+php_flag register_globals 0
+php_flag magic_quotes_gpc 0
+php_flag magic_quotes_runtime 0
+
+&lt;Files edit.php&gt;
+	AuthType basic
+	AuthName "Edit the adventure!!!!"
+	AuthUserFile /path/to/your/.htpasswd
+	require valid-user
+&lt;/Files&gt;
+
+&lt;Files admin.php&gt;
+        AuthType basic
+        AuthName "Administer the adventure!!!!"
+        AuthUserFile /path/to/your/.htpasswd
+        require valid-user
+&lt;/Files&gt;
+
+	</pre>
+</div>
+<br />
+You can create an .htpasswd file with something like:
+<div class="boxy">
+        <pre>
+		htpasswd -sc .htpasswd jeff	
+	</pre>
+</div>
+<br />
+The details of the .htaccess and .htpasswd are left as an exercise to the reader.  Google will show you the way.
+<br /><br />
+After you're happy with your install, delete or rename the install.php
+<br /><br />
+Now go configure your site on the <a href="admin.php">Admin Page</a>.
+<?php
 	include('footer.txt');
 ?> 
