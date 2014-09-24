@@ -1,0 +1,111 @@
+body {
+	color:#333;
+	background-color:white;
+	margin:20px;
+	padding:0px;
+	font: 16px verdana, arial, helvetica, sans-serif;
+	min-width:550px;
+}
+
+h1 {
+	margin:0px 0px 0px 0px;
+	padding:0px;
+	font-size:32px;
+	font-weight:900;
+	color:#ccc;
+}
+
+h2 {
+	font:bold 18px verdana, arial, helvetica, sans-serif;
+	margin:0px 0px 5px 0px;
+	padding:0px;
+}
+
+p {
+	margin:0px 0px 16px 0px;
+	padding:0px;
+}
+
+.Content>p {margin:0px;}
+.Content>p+p {text-indent:30px;}
+
+a {
+	color:#09c;
+	font-family:verdana, arial, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration:none;
+}
+
+h1 a {
+	font-size:28px;
+	font-weight:900;
+}
+
+td {
+	font-size:11px;
+	font-family:verdana, arial, helvetica, sans-serif;
+}
+
+a:link {color:#09c;}
+a:visited {color:#07a;}
+a:hover {background-color:#eee;}
+  
+.content {
+	width:a uto;
+	margin: 0px 0px 20px 190px;
+	border: 2px solid #ccc;
+	padding: 10px;
+}
+
+#leftcol {
+	position:absolute;
+	width:190px;
+	top:20px;
+	left:20px;
+	border: 2px dashed #999;
+	background-color:#eee;
+	padding:10px;
+}
+
+body>#leftcol {
+	width:158px;
+}
+
+#leftcol a {
+	text-decoration: underline;
+}
+
+.code {
+	font-family: courier, courier new, monospace;
+	font-size: 11px;
+}
+
+.choices {
+	margin-left: 5em;
+}
+
+.problems {
+	border: 3px solid red;
+	background-color: pink;
+	padding: 1em;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+div.boxy {
+	border: 1px solid #999;
+	padding: 0.4em;
+}
+
+div.godbox {
+	border: 1px solid #999;
+	padding: 0.4em;
+	background-color: #eef;
+}
+
+div.warnbox {
+	border: 1px solid #f00;
+	padding: 1em;
+	background-color: #fcc;
+	margin-bottom: 1em;
+}

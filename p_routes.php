@@ -1,31 +1,6 @@
-<?php/* #####################################################################
- * 
- * 	This code was made possible by the following people:
- * -Cal Henderson (http://www.iamcal.com)
- * -Travis "TeamColtra" McCrea (http://www.travismccrea.com)
- * -Club Ubuntu Team (http://www.club-ubuntu.org) #Club-Ubuntu Freenode
- * 
- * While part of the terms we do not REQUIRE you to keep attribution
- * we wouldn't mind it. :) 
- * 
- * Speaking of Licences:
- *   This file is part of Choose Your Own Adventure (Paradox Edition)
- *
- *  Choose is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *   Choose is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  inside the file "LICENCE".
- * ###################################################################*/
+<?php
 	include('config.php');
-
+	include('db.php');
 
 
 	include('header.txt');
@@ -60,11 +35,12 @@ There are quite a few routes through the game. Here they are (read left to right
 <br>
 <br>
 <table cellpadding="4" cellspacing="1" border="0">
-<?phpphp $count = insertRoutes(1, '<tr>'); ?>
+<?php
+$count = insertRoutes(1, '<tr>'); ?>
 </table>
 <br>
-There are currently <?phpphp echo $count; ?> routes through the story.
+There are currently <?php echo $count; ?> routes through the story.
 
-<?phpphp
+<?php
 	include('footer.txt');
 ?>

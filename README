@@ -11,12 +11,13 @@ TABLE OF CONTENTS:
   -Cal Henderson (http://www.iamcal.com)
   -Travis "TeamColtra" McCrea (http://www.travismccrea.com)
   -Club Ubuntu Team (http://www.club-ubuntu.org) #Club-Ubuntu Freenode
+  -Jeff Geiger (http://www.jeffgeiger.com) @jeffgeiger
   
   While part of the terms we do not REQUIRE you to keep attribution
   we wouldn't mind it. :) 
   
   Speaking of Licences:
-    This file is part of Choose Your Own Adventure (Paradox Edition)
+    This file is part of Choose Your Own Adventure
  
    Choose is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -40,6 +41,8 @@ This program is a fun little "game" that allows a community to develop a "choose
 -------------------
 #Changelog
 -------------------
+2012-01-11 22:57PM
+--Rewrote bits of the code here and there.  Took all the database functions out to db.php.  Added an admin page and table so you can change text and features without getting into the code.  Added support for Google Adsense and Analytics, as well as a ReCaptcha on the new room and report pages. (All optional) 
 
 2009-12-18 12:30AM
 --"Paradox Edition" of the Choose Your Own Adventure script forked from IAMCAL.COM and released under GPL with permission. Current changes are limited to including an installer script, and the origional script which is the only one that is working. 

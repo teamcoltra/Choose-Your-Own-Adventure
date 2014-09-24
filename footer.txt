@@ -3,21 +3,30 @@
 </div>
 
 <div class="content" align="center">
-	&copy; 2001-2009 <a href="http://www.iamcal.com/">Cal Henderson</a>
+	&copy; <?php echo $db ? $settings['copyright_year']." <a href=".$settings['copyright_url'].">".$settings['copyright_text']."</a>" : "An epic adventure!"; ?>
+	<br />
+	Built with <a href="source.php">Choose</a>
 </div>
 
 <div id="leftcol">
 	<h2>Navigation</h2>
 	<p style="margin: 0;">
 		<br>
-		&raquo;<a href="http://club-ubuntu.org/">Back to Club Ubuntu</a><br />
+		&raquo;<a href="index.php">Start over!</a><br />
 		<br />
-		&raquo;<a href="room.php">play the game</a><br />
-		<br />
-		&raquo;<a href="source.php">source code</a><br>
-		<br />
-		<br />
-
+		
+                <?php 
+		if ($db) {
+			$total_rooms = db_single(mysql_query("SELECT count(*) as total FROM choose_rooms"));
+			echo "Total Rooms: ".$total_rooms['total'];
+		?>
+			<br />
+			<br />
+			<?php
+			if ($settings['enable_adsense'] == 1) {
+				echo $settings['adsense_blurb'];
+			}
+		} ?>
 	</p>
 </div>
 

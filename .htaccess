@@ -4,7 +4,14 @@ php_flag magic_quotes_runtime 0
 
 <Files edit.php>
 	AuthType basic
-	AuthName "iamcal choose app"
-	AuthUserFile /home/geeks/public_html/story/.htpasswd
+	AuthName "Edit the adventure!!!!"
+	AuthUserFile /path/to/your/.htpasswd
 	require valid-user
+</Files>
+
+<Files admin.php>
+        AuthType basic
+        AuthName "Administer the adventure!!!!"
+        AuthUserFile /path/to/your/.htpasswd
+        require valid-user
 </Files>
